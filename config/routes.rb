@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/' => 'index#index'
   post '/login' => 'index#login'
   get '/logout' => 'index#logout'
+  post '/punch_in' => 'users#punch_in'
+  post '/punch_out' => 'users#punch_out'
 
   resources :users
 

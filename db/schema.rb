@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140608223152) do
     t.string   "last_name"
     t.string   "username"
     t.string   "email"
-    t.decimal  "wage"
+    t.decimal  "wage",          default: 8.25
     t.string   "password_hash"
     t.boolean  "is_punched_in", default: false
     t.datetime "created_at"

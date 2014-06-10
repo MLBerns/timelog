@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :username
       t.string :email
-      t.decimal :wage
+      t.decimal :wage, :default => 8.25
       t.string :password_hash
       t.boolean :is_punched_in, :default => false
       t.timestamps
