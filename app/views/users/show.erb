@@ -1,0 +1,14 @@
+<h1>On user page, welcome <%= current_user.first_name %></h2>
+  <h3><%= current_user.username %>'s Information<h3>
+    <p>Name: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+    <p>Email: <%= current_user.email %></p>
+    <p>Current Wage $<%= current_user.wage %></p>
+    <p>Clocked in? <span id="punch_status">
+      <% if current_user.is_punched_in %>
+        Yes
+        </span> <button id="time_punch" name="punch_out">Punch Out</button></p>
+      <% else %>
+        No
+        </span> <button id="time_punch" name="punch_in">Punch In</button></p>
+      <% end %>
+<a href="/logout">Log Out</a>
