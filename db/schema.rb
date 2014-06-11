@@ -21,15 +21,17 @@ ActiveRecord::Schema.define(version: 20140608223152) do
     t.string   "last_name"
     t.string   "username"
     t.string   "email"
-    t.decimal  "wage",          default: 8.25
+    t.decimal  "wage",          default: 0.0
     t.string   "password_hash"
     t.boolean  "is_punched_in", default: false
+    t.time     "punch_in_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "workdays", force: true do |t|
-    t.decimal  "hours_worked"
+    t.time     "time_in"
+    t.time     "time_out"
     t.string   "location"
     t.integer  "worker_id"
     t.datetime "created_at"

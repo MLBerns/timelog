@@ -1,7 +1,8 @@
 class CreateWorkdays < ActiveRecord::Migration
   def change
     create_table :workdays do |t|
-      t.decimal :hours_worked
+      t.time :time_in
+      t.time :time_out
       t.string :location
       t.belongs_to :worker
       t.timestamps
