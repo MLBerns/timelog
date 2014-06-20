@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.decimal :wage, :default => 0.00
       t.string :password_hash
       t.boolean :is_punched_in, :default => false
-      t.time :punch_in_time, :default => nil
+      t.datetime :punch_in_time, :default => nil
       t.timestamps
     end
   end

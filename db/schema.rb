@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20140608223152) do
     t.decimal  "wage",          default: 0.0
     t.string   "password_hash"
     t.boolean  "is_punched_in", default: false
-    t.time     "punch_in_time"
+    t.datetime "punch_in_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

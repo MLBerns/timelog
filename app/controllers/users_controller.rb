@@ -15,15 +15,15 @@ class UsersController < ApplicationController
   def punch_in
     user = User.find_by id: session[:user_id]
     user.is_punched_in = true
-    user.punch_in_time = Time.now
+    user.punch_in_time = DateTime.now
     user.save
-    render json: user.is_punched_in
+    render json: {punched_in: user.is_punched_in, punch_time: user.punch_in_time}
   end
 
   def punch_out
     user = User.find_by id: session[:user_id]
     user.is_punched_in = false
-    workday = Workday.create(time_in: user.punch_in_time, time_out: Time.now, location: "26th Street")
+    workday = Workday.create(time_in: user.punch_in_time, time_out: DateTime.now, location: "26th Street")
     user.punch_in_time = nil
     user.workdays << workday
     user.save
