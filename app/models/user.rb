@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  def pretty_punch_time
+    self.punch_in_time.strftime("%T")
+  end
+
   private
   def self.authenticate(username, password)
     current_user = User.find_by_username(username)

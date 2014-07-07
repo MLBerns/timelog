@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+class Application < Rails::Application
+  config.time_zone = 'Central Time (US & Canada)'
+end
+
 module Timelog
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

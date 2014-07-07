@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     user.is_punched_in = true
     user.punch_in_time = DateTime.now
     user.save
-    render json: {punched_in: user.is_punched_in, punch_time: user.punch_in_time}
+    render json: {punched_in: user.is_punched_in, punch_time: user.pretty_punch_time}
   end
 
   def punch_out

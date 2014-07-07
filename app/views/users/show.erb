@@ -4,9 +4,8 @@
     <p>Name: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
     <p>Email: <%= current_user.email %></p>
     <p>Current Wage $<%= current_user.wage %></p>
-    <!-- <p>Clocked in? <span id="punch_status"> -->
       <% if current_user.is_punched_in %>
-        <p> <span id="punch_status">Currently punched in. You punched in at <%= current_user.punch_in_time %>
+        <p> <span id="punch_status">Currently punched in. You punched in at <%= current_user.pretty_punch_time %>
         </span> <button id="time_punch" name="punch_out">Punch Out</button></p>
       <% else %>
         Not currently punched in
