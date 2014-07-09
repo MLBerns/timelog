@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   end
 
   def pretty_punch_time
-    self.punch_in_time.strftime("%T")
+    self.punch_in_time.strftime("%I:%M %p")
   end
 
   private

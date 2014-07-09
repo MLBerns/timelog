@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 class Application < Rails::Application
-  config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Central Time (US & Canada)'
 end
 
 module Timelog
