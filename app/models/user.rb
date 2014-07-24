@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
     self.punch_in_time.strftime("%I:%M %p")
   end
 
+  def month
+  end
+
   private
   def self.authenticate(username, password)
     current_user = User.find_by_username(username)

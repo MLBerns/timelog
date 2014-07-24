@@ -2,7 +2,7 @@
   <ul>
     <li><a href="#">Home</a></li>
     <li><a href="#">Profile</a></li>
-    <li><%= link_to "Calendar", controller: "calendar" %></li>
+    <li><%= link_to "Calendar", action: "calendar" %></li>
     <% if current_user %>
       <li><%= link_to "Logut", controller: "index", action: "logout" %></li>
     <% end %>
