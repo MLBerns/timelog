@@ -1,14 +1,16 @@
-<%= render partial: "nav" %>
-<h1>On user page, welcome <%= current_user.first_name %></h2>
-  <h3><%= current_user.username %>'s Information<h3>
-    <p>Name: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-    <p>Email: <%= current_user.email %></p>
-    <p>Current Wage $<%= current_user.wage %></p>
-      <% if current_user.is_punched_in %>
-        <p> <span id="punch_status">Currently punched in. You punched in at <%= current_user.pretty_punch_time %>
-        </span> <button id="time_punch" name="punch_out">Punch Out</button></p>
-      <% else %>
-        Not currently punched in
-        </span> <button id="time_punch" name="punch_in">Punch In</button></p>
-      <% end %>
-<a href="/logout">Log Out</a>
+<div class="container">
+  <%= render partial: "nav" %>
+  <h1>On user page, welcome <%= current_user.first_name %></h2>
+    <h3><%= current_user.username %>'s Information</h3>
+      <p>Name: <%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+      <p>Email: <%= current_user.email %></p>
+      <p>Current Wage $<%= current_user.wage %></p>
+        <% if current_user.is_punched_in %>
+          <p> <span id="punch_status">Currently punched in. You punched in at <%= current_user.pretty_punch_time %>
+          </span> <button id="time_punch" name="punch_out">Punch Out</button></p>
+        <% else %>
+          <span id="punch_status">Not currently punched in
+          </span> <button id="time_punch" name="punch_in">Punch In</button></p>
+        <% end %>
+  <a href="/logout">Log Out</a>
+</div>

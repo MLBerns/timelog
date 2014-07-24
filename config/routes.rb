@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/logout' => 'index#logout'
   post '/punch_in' => 'users#punch_in'
   post '/punch_out' => 'users#punch_out'
+  get '/calendar' => 'users#calendar'
 
   resources :users
 
