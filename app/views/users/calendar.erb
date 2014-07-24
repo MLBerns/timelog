@@ -1,0 +1,8 @@
+<div class="container">
+  <h3 class="current_month"><%= Time.now.strftime("%h") %></h3>
+  <ul class="calendar" >
+  <% drawDates.each do |date| %>
+    <li class="date"><%= date %></li>
+  <% end %>
+  </ul>
+</div>
