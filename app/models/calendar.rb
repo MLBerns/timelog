@@ -1,5 +1,5 @@
 class Calendar < ActiveRecord::Base
-  before_save :makeDates
+  #before_save :makeDates
   belongs_to :worker, class_name: "User"
 
   def months

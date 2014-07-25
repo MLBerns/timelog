@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :workdays, foreign_key: "worker_id"
+  has_one :calendar, foreign_key: "worker_id"
+  before_save :create_calendar
+
   require 'bcrypt'
 
   def password
@@ -15,7 +18,8 @@ class User < ActiveRecord::Base
     self.punch_in_time.strftime("%I:%M %p")
   end
 
-  def month
+  def create_calendar
+    self.calendar = Calendar.create
   end
 
   private
