@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :workdays, foreign_key: "worker_id"
   has_one :calendar, foreign_key: "worker_id"
-  before_save :create_calendar
+  after_create :create_calendar
 
   require 'bcrypt'
 
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   end
 
   def create_calendar
-    self.calendar = Calendar.create
+      self.calendar = Calendar.create
   end
 
   private
